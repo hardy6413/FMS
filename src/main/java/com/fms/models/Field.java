@@ -1,5 +1,7 @@
 package com.fms.models;
 
+import java.util.Set;
+
 public class Field {
     private Long id;
     private Double area;
@@ -10,4 +12,5 @@ public class Field {
     private Double extraPayment;
     private Farm farm;
     private String image;
+    private Set<FieldAction> fieldActions;
 }
