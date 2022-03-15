@@ -1,6 +1,7 @@
 package com.fms.models;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 public class FieldAction {
     private Long id;
@@ -10,4 +11,5 @@ public class FieldAction {
     private String actionName;
     private String description;
     private Boolean isCompleted;
+    private Set<ActionParams> actionParams;
 }
