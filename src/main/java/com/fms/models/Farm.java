@@ -24,7 +24,7 @@ public class Farm {
     private String farmToken;
     private String image;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "farm")

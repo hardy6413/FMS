@@ -21,7 +21,7 @@ public class UserAccount {
     private String email;
     private String password;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private PersonalData personalData;
 
     @Override
