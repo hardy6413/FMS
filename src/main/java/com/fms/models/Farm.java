@@ -31,7 +31,7 @@ public class Farm {
     @ToString.Exclude
     private Set<Field> fields = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "farm")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "farm", fetch = FetchType.EAGER)
     private Set<PersonalData> workers = new HashSet<>();
 
     @Override
