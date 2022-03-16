@@ -31,6 +31,9 @@ public class Farm {
     @ToString.Exclude
     private Set<Field> fields = new HashSet<>();
 
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "farm")
+    private Set<PersonalData> workers = new HashSet<>();
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
