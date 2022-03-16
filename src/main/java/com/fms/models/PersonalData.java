@@ -22,10 +22,16 @@ public class PersonalData {
     private String lastName;
     private Boolean isOwner;
 
-
+    @OneToOne
     private Address address;
+
+    @OneToOne
     private Farm farm;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "personalData")
     private Set<FieldAction> fieldActions;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "personalData")
     private Set<Task> tasks;
 
     @Override

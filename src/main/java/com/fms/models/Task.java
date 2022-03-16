@@ -3,10 +3,7 @@ package com.fms.models;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -22,6 +19,9 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "personal_data_id")
     private PersonalData personalData;
     private Boolean isCompleted;
     private LocalDate createdAt;

@@ -3,10 +3,7 @@ package com.fms.models;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Set;
@@ -17,18 +14,25 @@ import java.util.Set;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class FieldAction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "field_id")
     private Field field;
+
+    @ManyToOne
+    @JoinColumn(name = "personal_data_id")
     private PersonalData personalData;
     private LocalDate actionStart;
     private String actionName;
     private String description;
     private Boolean isCompleted;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "fieldAction")
     private Set<ActionParams> actionParams;
 
     @Override
