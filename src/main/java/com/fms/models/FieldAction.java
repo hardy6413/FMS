@@ -5,6 +5,7 @@ import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -14,6 +15,7 @@ import java.util.Set;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class FieldAction {
 
     @Id
@@ -32,8 +34,8 @@ public class FieldAction {
     private String description;
     private Boolean isCompleted;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "fieldAction")
-    private Set<ActionParams> actionParams;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "fieldAction",fetch = FetchType.EAGER)
+    private Set<ActionParams> actionParams = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {

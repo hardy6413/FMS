@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -13,6 +14,7 @@ import java.util.Set;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Farm {
 
     @Id
@@ -26,7 +28,8 @@ public class Farm {
     private Address address;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "farm")
-    private Set<Field> fields;
+    @ToString.Exclude
+    private Set<Field> fields = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {

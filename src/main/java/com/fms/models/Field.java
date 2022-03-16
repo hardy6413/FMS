@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -13,6 +14,7 @@ import java.util.Set;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Field {
 
     @Id
@@ -30,8 +32,8 @@ public class Field {
     private Farm farm;
     private String image;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "field")
-    private Set<FieldAction> fieldActions;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "field", fetch = FetchType.EAGER)
+    private Set<FieldAction> fieldActions = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {
