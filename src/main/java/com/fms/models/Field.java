@@ -20,11 +20,17 @@ public class Field {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Double area;
+
     private String name;
+
     private String description;
+
     private Boolean isProperty;
+
     private String BlockNumber;
+
     private Double extraPayment;
 
     @ManyToOne

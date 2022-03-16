@@ -20,8 +20,11 @@ public class Farm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String farmName;
+
     private String farmToken;
+
     private String image;
 
     @OneToOne(cascade = CascadeType.ALL)

@@ -29,9 +29,13 @@ public class FieldAction {
     @ManyToOne
     @JoinColumn(name = "personal_data_id")
     private PersonalData personalData;
+
     private LocalDate actionStart;
+
     private String actionName;
+
     private String description;
+
     private Boolean isCompleted;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "fieldAction",fetch = FetchType.EAGER)

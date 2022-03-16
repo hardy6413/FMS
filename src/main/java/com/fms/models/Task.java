@@ -24,7 +24,9 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "personal_data_id")
     private PersonalData personalData;
+
     private Boolean isCompleted;
+
     private LocalDate createdAt;
 
     @Override
