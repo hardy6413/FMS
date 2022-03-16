@@ -27,7 +27,8 @@ public class PersonalData {
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "farm_id")
     private Farm farm;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "personalData")
