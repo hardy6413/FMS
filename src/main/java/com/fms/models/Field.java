@@ -3,10 +3,7 @@ package com.fms.models;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
@@ -16,7 +13,6 @@ import java.util.Set;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Field {
 
     @Id
@@ -28,8 +24,13 @@ public class Field {
     private Boolean isProperty;
     private String BlockNumber;
     private Double extraPayment;
+
+    @ManyToOne
+    @JoinColumn(name = "farm_id")
     private Farm farm;
     private String image;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "field")
     private Set<FieldAction> fieldActions;
 
     @Override

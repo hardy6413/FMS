@@ -3,10 +3,7 @@ package com.fms.models;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -15,7 +12,6 @@ import java.util.Objects;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class ActionParams {
 
     @Id
@@ -23,6 +19,9 @@ public class ActionParams {
     private Long id;
     private String Name;
     private String Value;
+
+    @ManyToOne
+    @JoinColumn(name = "field_action_id")
     private FieldAction fieldAction;
 
     @Override

@@ -3,10 +3,7 @@ package com.fms.models;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
@@ -16,7 +13,6 @@ import java.util.Set;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Farm {
 
     @Id
@@ -25,7 +21,11 @@ public class Farm {
     private String farmName;
     private String farmToken;
     private String image;
+
+    @OneToOne
     private Address address;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "farm")
     private Set<Field> fields;
 
     @Override

@@ -12,7 +12,6 @@ import java.util.Objects;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Address {
 
     @Id
@@ -22,8 +21,6 @@ public class Address {
     private String street;
     private String postalCode;
     private String buildingNumber;
-    @OneToOne
-    private PersonalData personalData;
 
     @Override
     public boolean equals(Object o) {

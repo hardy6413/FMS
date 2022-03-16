@@ -20,7 +20,7 @@ public class UserAccount {
     private String email;
     private String password;
 
-
+    @OneToOne
     private PersonalData personalData;
 
     @Override
