@@ -18,9 +18,13 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String city;
+
     private String street;
+
     private String postalCode;
+
     private String buildingNumber;
 
     @Override
