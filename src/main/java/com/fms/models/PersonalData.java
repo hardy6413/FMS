@@ -24,16 +24,16 @@ public class PersonalData {
     private String lastName;
     private Boolean isOwner;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
     @OneToOne
     private Farm farm;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "personalData")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "personalData")
     private Set<FieldAction> fieldActions = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "personalData")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "personalData")
     private Set<Task> tasks = new HashSet<>();
 
     @Override
