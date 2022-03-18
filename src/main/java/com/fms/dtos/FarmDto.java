@@ -3,10 +3,16 @@ package com.fms.dtos;
 import com.fms.models.Address;
 import com.fms.models.Field;
 import com.fms.models.PersonalData;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class FarmDto {
     private Long id;
 

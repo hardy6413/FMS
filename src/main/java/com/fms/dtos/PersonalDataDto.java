@@ -4,10 +4,16 @@ import com.fms.models.Address;
 import com.fms.models.Farm;
 import com.fms.models.FieldAction;
 import com.fms.models.Task;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class PersonalDataDto {
     private Long id;
 

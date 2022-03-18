@@ -2,10 +2,16 @@ package com.fms.dtos;
 
 import com.fms.models.Farm;
 import com.fms.models.FieldAction;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class FieldDto {
     private Long id;
 
