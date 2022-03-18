@@ -1,0 +1,682 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #2ED121 0%, #035117 100%) 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 60%;
+    text-align: center;
+}
+
+.login-container {
+    width: 50%;
+    background: #FFFFFFD4 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 6px 6px #00000029, 0px 6px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 61px;
+    opacity: 0.95;
+    display: flex;
+    justify-content: center;
+}
+
+form.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 35vh;
+}
+
+button {
+    background: #D4CB9D 0% 0% no-repeat padding-box;
+    border-radius: 23px;
+    opacity: 1;
+    width: 50%;
+    border: none;
+    text-align: center;
+    color: #846F00;
+    margin: 1em;
+    line-height: 2.5em;
+    font-family: 'Segoe UI';
+    font-size: 3vh;
+}
+
+input,textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 70%;
+    font-size: 2vmin;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1em;
+
+}
+
+
+.base-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #1A971C 0%, #0D4A0E 100%) 0% 0% no-repeat padding-box;
+}
+
+nav {
+    width: 20vw;
+    height: 100%;
+    background: transparent linear-gradient(180deg, #1A971C 0%, #0D4A0E 100%) 0% 0% no-repeat padding-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main {
+    width: 80vw;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+    font-family: 'Segoe UI';
+    width: calc(100% - 40px);
+    justify-content: left;
+    text-align: left;
+    font-size: 2vh;
+}
+
+a i {
+    font-size: 1.5em;
+    color: #116713;
+    margin-right: 0.3em;
+    margin-left: 0.3em;
+    margin-top: 0.3em;
+}
+
+
+.button {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 1em;
+    opacity: 0.8;
+    margin-left: 1em;
+    letter-spacing: 0.7px;
+    color: #846F00;
+    font-family: 'Segoe UI';
+    padding: 0.2em;
+    width: calc(100% - 100px);
+
+    
+}
+nav>img {
+    width: 80%;
+    margin: 0 3em;
+    
+}
+
+ul {
+    list-style-type: none;
+    color:white;
+    font: normal normal normal 600 20px/27px Segoe UI;
+ 
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.72px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    width: calc(100% - 30px);
+    position: relative;
+    
+}
+
+li {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.settings {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.fa, .fas {
+    width: 1em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+    border-bottom: 2px ridge #D1E9D1; 
+    
+}
+
+.create-farm {
+    display: flex;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px;
+    border-radius: 1.5em;
+    opacity: 0.8;
+    color: #846F00;
+    width: 25%;
+    font: normal normal normal 600 1.3em/2em Segoe UI;
+    height: 80%;
+    justify-content:center;
+    align-items: center;
+    
+}
+.create-farm > i {
+    padding: 1em 0.2em;
+    font-size: 2.5vmin;
+    position: relative;
+    top: 2px;
+    left: 1px;
+    
+}
+
+.create-farm > a{
+    border-radius: 1em;
+    letter-spacing: 0.7px;
+    color: #846F00;
+    font-family: 'Segoe UI';
+    padding: 0.2em;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vmin;
+}
+
+.search-bar {
+    display: flex;
+    width: 70%;
+    height: 80%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 1.5em;
+    opacity: 0.8;
+    justify-content: center;
+    justify-items: center;
+    align-items: baseline;
+}
+.search-bar > i {
+    width: 5%;
+    font-size: 1.5em;
+    color: #846F00;
+    height: 100%;
+    padding-left: 1em;
+
+}
+.search-bar > div {
+   
+    height: 90%;
+    width: 95%;
+    border: 0;
+}
+
+.search-bar>div>input{
+    opacity: 0.8;
+    width: 100%;
+    text-align: center;
+    font: normal normal normal 600 20px/27px Segoe UI;
+    color: #846F00;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    border: 0;
+}
+
+
+/*to dodalem jak ocs*/
+
+h2{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.create-farm-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+    padding: 1em;
+    overflow: auto;
+    
+}
+
+.create-farm-form > form{
+    display: flex;
+    flex-direction: column;
+    background: #D0E8D1 0% 0% no-repeat padding-box;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 1.5em;
+    height: 95%;
+}
+
+.create-farm-form > form > select{
+    color: #846F00;
+    width: 25%;
+    font: normal normal normal 600 1.3em/2em Segoe UI;
+    background: #D0E8D1 0% 0% no-repeat padding-box;
+    border: green 2px solid;
+
+}
+
+.create-farm-form > form > input{
+    height: 8%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1em;
+}
+
+.create-farm-form > form > div {
+    height: 8%;
+    display: flex;
+    width: 70%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.create-farm-form > form > div > *{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1em;
+    width: auto;
+    font-size: 2vmin;
+    font: normal normal normal 600 2vmin Segoe UI;
+}
+
+.create-farm-form > form > div > input{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    height: 80%;
+    width: 5%;
+}
+
+select > option {
+    color: #846F00;
+    width: 25%;
+    font: normal normal normal 600 1.3em/2em Segoe UI;
+}
+
+
+
+#farm-picture{
+    overflow: auto;
+    width: 50%;
+    height: 90%;
+    border-radius: 20px;
+}
+
+
+.farms-item-container{
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 40%;
+    margin: 0;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+}
+
+.farms-list{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.farms-item-container>div{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    margin-left: 1.3em;
+    align-items: flex-start;
+    background: #D0E8D1 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+}
+
+.farms-item-container>div:hover > form > #join-button{
+    display: block;
+    align-self: center;
+    width: 75%;
+}
+.farms-item-container>div:hover > form{
+    display: block;
+    align-self: center;
+}
+.farms-item-container>div:hover{
+    background: transparent;
+    justify-content: center;
+}
+.farms-item-container>div> form{
+    display: none;
+}
+
+#joinFarmForm > label > input{
+    border: none;
+    border-bottom: 1px solid gray;
+    margin: 1em;
+    width: 70%;
+    font-size: 2vmin;
+    background: #D4CB9D 0% 0% no-repeat padding-box;
+    border-radius: 23px;
+    opacity: 1;
+    text-align: center;
+    color: #846F00;
+    font-family: 'Segoe UI';
+    margin: 0;
+}
+
+.farms-item-container>div:hover > h2, .farms-item-container>div:hover > div, .farms-item-container>div:hover > p{
+    display: none;
+}
+
+#join-button{
+    display: none;
+}
+
+.farm-data-info{
+    text-align: left;
+    font: normal normal bold 2.5vmin Segoe UI;
+    letter-spacing: 0.3px;
+    color: #846F00;
+    width: 90%;
+    margin: 0;
+    text-overflow: initial;
+    height: 40%;
+    overflow-wrap: break-word;
+    white-space: normal;
+    padding: 0.5em;
+}
+
+.farms-list-background{
+    opacity: 1;
+    height: 100%;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 30px;
+    overflow: auto;
+}
+
+
+.messages{
+    height: 10%;
+    color: #846F00;
+    font: normal normal normal 600 2vmin Segoe UI;
+}
+
+#desc{
+    height: auto;
+}
+
+
+.logout-button{
+    background: #D4CB9D 0% 0% no-repeat padding-box;
+    opacity: 1;
+    width: 100%;
+    border: none;
+    color: #846F00;
+    margin: 0;
+    padding: 0;
+    line-height: 2em;
+    font: normal normal normal 600 2vmin Segoe UI;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.logout-form{
+    letter-spacing: 0.7px;
+    color: #846F00;
+    font-family: 'Segoe UI';
+    padding: 0.2em;
+    margin-left: 1em;
+    width: calc(100% - 100px);
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+    justify-content: left;
+    text-align: left;
+    font-size: 2vh;
+    background: #D4CB9D 0% 0% no-repeat padding-box;
+    border-radius: 1em;
+}
+
+.navi-button-container{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 0.8;
+    letter-spacing: 0.7px;
+    color: #846F00;
+    font-family: 'Segoe UI';
+    padding: 0.2em;
+    margin-left: 1em;
+    width: calc(100% - 100px);
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+    justify-content: left;
+    text-align: left;
+    font-size: 2vh;
+    border-radius: 1em;
+}
+
+.left-navi-button{
+    opacity: 1;
+    width: 100%;
+    border: none;
+    color: #846F00;
+    margin: 0;
+    padding: 0;
+    line-height: 2em;
+    font: normal normal normal 600 2vmin Segoe UI;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ .logout-button i{
+     font-size: 1.5em;
+     margin-right: 0.3em;
+     margin-left: 0.3em;
+     margin-top: 0.3em;
+ }
+
+.create-account-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+    padding: 1em;
+    overflow: auto;
+    width: 50%;
+}
+
+.create-account-form > form {
+    display: flex;
+    flex-direction: column;
+    background: #D0E8D1 0% 0% no-repeat padding-box;
+    width: 70%;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    border-radius: 1.5em;
+    height: 80%;
+}
+
+.create-account-form > form > input{
+    margin: 0;
+    width: 70%;
+    margin-bottom: 1em;
+}
+.main-container{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+.main-container > img{
+    width: 40%;
+    margin: 0 3em;
+}
+
+.no-valid{
+    border: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}
+
+.entry-container{
+    width: 40%;
+}
+
+.sign-up-button{
+    background: #D4CB9D 0% 0% no-repeat padding-box;
+    border-radius: 23px;
+    opacity: 1;
+    width: 50%;
+    border: none;
+    text-align: center;
+    color: #846F00;
+    line-height: 2.5em;
+    font-family: 'Segoe UI';
+    font-size: 3vh;
+    width: 90%;
+    margin: 0.5em 0.5em;
+}
+
+.login-buttons-container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+#farms-list-message{
+    align-self: center;
+    text-align: center;
+    width: 30%;
+    height: auto;
+    outline: none;
+    color: red;
+    font-size: 4vmin;
+}
+
+#hamburger-icon{
+    display: none;
+    transform: scale(6);
+    color: #D0E8D1;
+}
+
+@media only screen and (max-device-width: 780px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10em;
+    }
+
+    .login-container,
+    .logo {
+        width: 80%;
+    }
+    form {
+        margin: auto;
+    }
+
+     .logo > img{
+         transform: scale(2.5);
+     }
+
+    input{
+        font-size: 2vh;
+    }
+
+    .entry-container{
+        display: flex;
+        justify-content: center;
+        width: 80%;
+    }
+
+    .messages{
+        font-size: 2vh;
+    }
+    nav>img{
+        width: 55%;
+        height: 100%;
+        /* transform: scale(2); */
+        padding: 1em;
+    }
+
+    #hamburger-icon{
+        display: inherit;
+    }
+    nav >ul{
+        display: none;
+    }
+    nav{
+        display: flex;
+        width: 100%;
+        height: 10%;
+        flex-direction: row;
+    }
+    main{
+        width: 90vw;
+        overflow: scroll;
+    }
+    .left-navi-button, .logout-button{
+        font-size: 2vmax;
+    }
+    ul{
+        height: 50%;
+    }
+    .settings{
+        position: inherit;
+    }
+    .base-container{
+        flex-direction: column;
+    }
+
+    section > form > input,textarea {
+        font-size: 3vmax;
+    }
+
+    .create-farm-form > form > div > *{
+        font-size: 3vmax;
+    }
+    .create-farm-form > form > div > input{
+        transform: scale(3);
+    }
+
+}
