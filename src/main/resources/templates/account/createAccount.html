@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/farms.css">
+    <script src="https://kit.fontawesome.com/a781b65e9b.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/script.js" defer></script>
+    <script type="text/javascript" src="/js/EmptyFormValidation.js" defer></script>
+    <title>Register</title>
+</head>
+
+<body>
+<div class="base-container">
+    <main class="main-container">
+        <img src="/img/logo.svg">
+        <section class="create-account-form">
+            <form th:object="${account}" th:action="@{/account/new}" method="POST" name="standard-form">
+                <div class="messages">
+                </div>
+                <input name="email" type="text" placeholder="email">
+                <input name="password" type="password" placeholder="password">
+                <input name="confirmedPassword" type="password" placeholder="confirm password">
+                <input th:field="*{personalData.firstName}" name="name" type="text" placeholder="name">
+                <input th:field="*{personalData.lastName}" name="lastname" type="text" placeholder="last name">
+                <input th:field="*{personalData.address.street}" name="street" type="text" placeholder="street">
+                <input th:field="*{personalData.address.city}" name="city" type="text" placeholder="city">
+                <input th:field="*{personalData.address.postalCode}" name="postal-code" type="text" placeholder="postal-code">
+                <input th:field="*{personalData.address.buildingNumber}" name="building-number" type="text" placeholder="building-number">
+                <button type="submit">create account</button>
+            </form>
+
+        </section>
+    </main>
+</div>
+</body>
