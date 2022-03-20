@@ -36,7 +36,6 @@ public class Field {
     @ManyToOne
     @JoinColumn(name = "farm_id")
     private Farm farm;
-
     private String image;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "field", fetch = FetchType.EAGER)
