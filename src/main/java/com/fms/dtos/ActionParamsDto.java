@@ -1,6 +1,7 @@
 package com.fms.dtos;
 
 import com.fms.models.FieldAction;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
