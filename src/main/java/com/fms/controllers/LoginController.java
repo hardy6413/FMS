@@ -1,8 +1,8 @@
 package com.fms.controllers;
 
-import com.fms.models.PersonalData;
 import com.fms.models.UserAccount;
 import com.fms.service.AddressService;
+import com.fms.service.FarmService;
 import com.fms.service.LoginService;
 import com.fms.service.PersonalDataService;
 import lombok.AllArgsConstructor;
@@ -21,6 +21,7 @@ public class LoginController {
     private final LoginService loginService;
     private final AddressService addressService;
     private final PersonalDataService personalDataService;
+    private final FarmService farmService;
 
     @GetMapping({"", "/", "/index"})
     public String getLoginPage() {
@@ -40,13 +41,15 @@ public class LoginController {
     }
 
     @PostMapping("/account/new")
-    public String processAccountCreationForm(@ModelAttribute("account") UserAccount userAccount) {
+    public String processAccountCreationForm(@ModelAttribute("account") UserAccount userAccount, Model model) {
 
         log.debug("getting AccountCreationForm");
 
         loginService.createAccount(userAccount);
         personalDataService.createOrUpdatePersonalData(userAccount.getPersonalData());
         addressService.createOrUpdateAddress(userAccount.getPersonalData().getAddress());
-        return "account/createAccount";
+
+        model.addAttribute("farms",farmService.findAll());
+        return "farms/farmsList";
     }
 }
