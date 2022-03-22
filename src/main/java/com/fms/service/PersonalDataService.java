@@ -13,7 +13,8 @@ public class PersonalDataService {
 
     private final PersonalDataRepository personalDataRepository;
 
-    public void createOrUpdatePersonalData(PersonalData personalData){
-        personalDataRepository.save(personalData);
+    public PersonalData createOrUpdatePersonalData(PersonalData personalData){
+
+        return personalDataRepository.save(personalData);
     }
 }
