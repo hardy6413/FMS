@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/farms.css">
+    <link rel="stylesheet" type="text/css" href="/css/overview.css">
+    <link rel="stylesheet" type="text/css" href="/css/field.css">
+    <link rel="stylesheet" type="text/css" href="/css/overview.css">
+    <script src="https://kit.fontawesome.com/a781b65e9b.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/search.js" defer></script>
+    <title>FarmList</title>
+</head>
+
+<body>
+    <div class="base-container">
+         <th:block th:insert="includes/leftNavi.html :: #left-navi " ></th:block>
+       <main>
+        <header>
+            <div class ="search-bar">
+                <i class="fas fa-search"></i>
+                <div>
+                    <input placeholder="search farm" >
+                </div>
+
+            </div>
+            <div class="create-farm">
+                <i class="fas fa-plus"></i>
+                <a class="create-farm-button" href="/farm/new" > create farm </a>
+            </div>
+       </header>
+           <section class="farms-list-background">
+               <div class="messages" id="farms-list-message" >
+
+               </div>
+            <ul class="farms-list">
+                <li class="farms-item-container" th:each="farm : ${farms}">
+                    <img id="farm-picture" th:src="/uploads/${farm.getImage()}" >
+                    <div>
+                        <h2 class="farm-data-info" id="desc">Owner</h2>
+                        <p class="farm-data-info" id="desc" th:text="${farm.getFarmName()}">Name</p>
+                        <div class="farm-data-info" id="desc" th:text="${farm.address.toString()}">Address</div>
+                        <form id="joinFarmForm" action="joinFarm" method="POST">
+                            <label th:id="${farm.getId()}">
+                                <input name="code" type="text" placeholder="enter code">
+                            </label>
+                            <button id="join-button"  type="submit">join farm</button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+           </section>
+       </main>
+    </div>
+</body>
+
+<template id="farm-template">
+    <li class="farms-item-container">
+        <img id="farm-picture" src="">
+        <div>
+            <h2 class="farm-data-info" id="desc">owner</h2>
+            <p class="farm-data-info" id="desc">name</p>
+            <h3 class="farm-data-info" id="desc">address</h3>
+        </div>
+    </li>
+</template>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/farms.css">
+    <script src="https://kit.fontawesome.com/a781b65e9b.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/EmptyFormValidation.js" defer></script>
+    <title>createFarm</title>
+</head>
+
+<body>
+    <div class="base-container">
+        <th:block th:insert="includes/leftNavi.html :: #left-navi " ></th:block>
+       <main>
+           <header>
+
+           </header>
+           <section class="create-farm-form">
+            <form th:object="${farm}" th:action="@{/farm/new}"  method="POST" ENCTYPE="multipart/form-data" name="standard-form">
+                <div class="messages">
+
+                </div>
+                <input name="name" type="text" placeholder="name">
+                <input th:field="*{address.street}" name="street" type="text" placeholder="street">
+                <input th:field="*{address.city}" name="city" type="text" placeholder="city">
+                <input th:field="*{address.postalCode}" name="postal-code" type="text" placeholder="postal-code">
+                <input th:field="*{address.buildingNumber}" name="building-number" type="text" placeholder="building-number">
+
+                <input th:field="${farm.image}" type="file" name="file"/><br/>
+                <button type="submit">create farm</button>
+            </form>
+               
+           </section>
+       </main>
+    </div>
+</body>

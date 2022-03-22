@@ -13,7 +13,8 @@ public class AddressService {
 
     private final AddressRepository addressRepository;
 
-    public void createOrUpdateAddress(Address address){
-        addressRepository.save(address);
+    public Address createOrUpdateAddress(Address address){
+
+        return addressRepository.save(address);
     }
 }
