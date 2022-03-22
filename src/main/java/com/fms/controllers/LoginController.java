@@ -26,7 +26,7 @@ public class LoginController {
     @GetMapping({"", "/", "/index"})
     public String getLoginPage() {
 
-        log.debug("getting IndexPage");
+        log.debug("getting Index Page");
         return "account/login";
     }
 
@@ -35,7 +35,7 @@ public class LoginController {
 
         model.addAttribute("account", new UserAccount());
 
-        log.debug("getting AccountCreationForm");
+        log.debug("getting Account creation form");
 
         return "account/createAccount";
     }
@@ -43,11 +43,13 @@ public class LoginController {
     @PostMapping("/account/new")
     public String processAccountCreationForm(@ModelAttribute("account") UserAccount userAccount, Model model) {
 
-        log.debug("getting AccountCreationForm");
+        log.debug("Creating new account...");
 
-        loginService.createAccount(userAccount);
+        loginService.saveUser(userAccount);
         personalDataService.createOrUpdatePersonalData(userAccount.getPersonalData());
         addressService.createOrUpdateAddress(userAccount.getPersonalData().getAddress());
+
+        log.debug("Account created successfully, ID of the new user : " + userAccount.getId());
 
         model.addAttribute("farms",farmService.findAll());
         return "farms/farmsList";

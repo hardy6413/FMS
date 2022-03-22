@@ -10,10 +10,11 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @AllArgsConstructor
 public class LoginService {
+
     private final UserAccountRepository userAccountRepository;
 
-    public void  createAccount(UserAccount userAccount){
+    public UserAccount saveUser(UserAccount userAccount){
 
-        userAccountRepository.save(userAccount);
+        return userAccountRepository.save(userAccount);
     }
 }
