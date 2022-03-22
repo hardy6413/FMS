@@ -1,5 +1,7 @@
 package com.fms.controllers;
 
+import com.fms.models.Address;
+import com.fms.models.PersonalData;
 import com.fms.models.UserAccount;
 import com.fms.service.AddressService;
 import com.fms.service.FarmService;
@@ -9,9 +11,12 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.validation.Valid;
 
 @Controller
 @Slf4j
@@ -34,6 +39,8 @@ public class LoginController {
     public String getAccountCreationForm(Model model) {
 
         model.addAttribute("account", new UserAccount());
+        model.addAttribute("personalData", new PersonalData());
+        model.addAttribute("address", new Address());
 
         log.debug("getting Account creation form");
 
@@ -41,7 +48,19 @@ public class LoginController {
     }
 
     @PostMapping("/account/new")
-    public String processAccountCreationForm(@ModelAttribute("account") UserAccount userAccount, Model model) {
+    public String processAccountCreationForm(@Valid @ModelAttribute("account") UserAccount userAccount,
+                                             @Valid @ModelAttribute("personalData") PersonalData personalData,
+                                             @Valid @ModelAttribute("address") Address address,
+                                             BindingResult bindingResult, Model model) {
+
+        if (bindingResult.hasErrors()){
+
+            bindingResult.getAllErrors().forEach(objectError -> {
+                log.debug(objectError.toString());
+            });
+
+            return "account/createAccount";
+        }
 
         log.debug("Creating new account...");
 

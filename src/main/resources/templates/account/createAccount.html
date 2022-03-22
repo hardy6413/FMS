@@ -20,12 +20,12 @@
                 <input name="email" type="text" placeholder="email">
                 <input name="password" type="password" placeholder="password">
                 <input name="confirmedPassword" type="password" placeholder="confirm password">
-                <input th:field="*{personalData.firstName}" name="name" type="text" placeholder="name">
-                <input th:field="*{personalData.lastName}" name="lastname" type="text" placeholder="last name">
-                <input th:field="*{personalData.address.street}" name="street" type="text" placeholder="street">
-                <input th:field="*{personalData.address.city}" name="city" type="text" placeholder="city">
-                <input th:field="*{personalData.address.postalCode}" name="postal-code" type="text" placeholder="postal-code">
-                <input th:field="*{personalData.address.buildingNumber}" name="building-number" type="text" placeholder="building-number">
+                <input th:object="personalData" name="name" type="text" placeholder="name">
+                <input  name="lastname" type="text" placeholder="last name">
+                <input th:object="address" name="street" type="text" placeholder="street">
+                <input  name="city" type="text" placeholder="city">
+                <input  name="postal-code" type="text" placeholder="postal-code">
+                <input  name="building-number" type="text" placeholder="building-number">
                 <button type="submit">create account</button>
             </form>
 
