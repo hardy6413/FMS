@@ -2,6 +2,7 @@ package com.fms.models;
 
 import lombok.*;
 import org.hibernate.Hibernate;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -19,12 +20,16 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Length(message = "City length is invalid", min = 3, max = 30)
     private String city;
 
+    @Length(message = "Street length is invalid", min = 3, max = 30)
     private String street;
 
+    @Length(message = "Postal code length is invalid", min = 3, max = 30)
     private String postalCode;
 
+    @Length(message = "Building number is invalid", min = 1, max = 30)
     private String buildingNumber;
 
     @Override
