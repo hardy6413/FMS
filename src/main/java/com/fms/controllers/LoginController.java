@@ -28,6 +28,23 @@ public class LoginController {
     private final PersonalDataService personalDataService;
     private final FarmService farmService;
 
+<<<<<<< HEAD
+=======
+
+    @PostMapping("/login")
+    public String processLogin(@Valid @ModelAttribute("account") UserAccount userAccount, BindingResult accountBindingResult) {
+
+        if (accountBindingResult.hasErrors()){
+
+            accountBindingResult.getAllErrors().forEach(objectError -> log.debug(objectError.toString()));
+
+            return "/account/login";
+        }
+
+        return "farms/farmsList";
+    }
+
+>>>>>>> implementing-Farm-associated-views
     @GetMapping({"", "/", "/index"})
     public String getLoginPage() {
 
