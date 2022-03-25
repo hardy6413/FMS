@@ -4,7 +4,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 src/main/resources/application.properties
+<<<<<<< HEAD
+=======
 
+>>>>>>> 0633c820f40d41c616ba2e0f6bd232d7ee9bdaac
 
 ### STS ###
 .apt_generated

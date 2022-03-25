@@ -49,28 +49,38 @@ public class LoginController {
 
     @PostMapping("/account/new")
     public String processAccountCreationForm(@Valid @ModelAttribute("account") UserAccount userAccount,
+                                             BindingResult accountBindingResult,
                                              @Valid @ModelAttribute("personalData") PersonalData personalData,
+                                             BindingResult personalDataBindingResult,
                                              @Valid @ModelAttribute("address") Address address,
-                                             BindingResult bindingResult, Model model) {
+                                             BindingResult addressBindingResult, Model model) {
 
-        if (bindingResult.hasErrors()){
+        if (accountBindingResult.hasErrors() || personalDataBindingResult.hasErrors() || addressBindingResult.hasErrors()){
 
-            bindingResult.getAllErrors().forEach(objectError -> {
-                log.debug(objectError.toString());
-            });
+            accountBindingResult.getAllErrors().forEach(objectError -> log.debug(objectError.toString()));
+
+            personalDataBindingResult.getAllErrors().forEach(objectError -> log.debug(objectError.toString()));
+
+            addressBindingResult.getAllErrors().forEach(objectError -> log.debug(objectError.toString()));
 
             return "account/createAccount";
         }
 
+
         log.debug("Creating new account...");
 
-        loginService.saveUser(userAccount);
-        personalDataService.createOrUpdatePersonalData(userAccount.getPersonalData());
-        addressService.createOrUpdateAddress(userAccount.getPersonalData().getAddress());
+        UserAccount savedUserAccount = loginService.saveUser(userAccount);
 
-        log.debug("Account created successfully, ID of the new user : " + userAccount.getId());
+        PersonalData savedPersonalData = personalDataService.createOrUpdatePersonalData(personalData);
+
+        Address savedAddress = addressService.createOrUpdateAddress(address);
+
+        log.debug("Account created successfully, ID of the new user : " + savedUserAccount.getId() +
+                " ID of the savedUser's Personal Data " + savedPersonalData.getId() +
+                " and ID of the Address " + savedAddress.getId());
 
         model.addAttribute("farms",farmService.findAll());
+
         return "farms/farmsList";
     }
 }
